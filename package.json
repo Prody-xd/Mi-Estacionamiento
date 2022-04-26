@@ -1,0 +1,26 @@
+{
+  "name": "mi-estacionamiento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prody-xd/Mi-Estacionamiento.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prody-xd/Mi-Estacionamiento/issues"
+  },
+  "homepage": "https://github.com/Prody-xd/Mi-Estacionamiento#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.15"
+  }
+}
