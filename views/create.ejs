@@ -42,28 +42,28 @@
                 <form action="/save" method="POST">
                     <div class="mb-3">
                         <label for="user" class="form-label">Nombres</label>
-                        <input type="text" class="form-control" id="user" name="user" tabindex="1">
+                        <input type="text" class="form-control" id="nombres" name="user" tabindex="1">
                     </div>
                     <div class="mb-3">
                         <label for="user" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="user" name="user" tabindex="1">
+                        <input type="text" class="form-control" id="apellidos" name="user" tabindex="1">
                     </div>
                     <div class="mb-3">
-                        <label for="user" class="form-label">Rut</label>
-                        <input type="text" class="form-control" id="user" name="user" tabindex="1">
+                        <label for="user" class="form-label">Rut / Pasaporte</label>
+                        <input type="text" class="form-control" id="rut" name="user" tabindex="1">
                     </div>
                     <div class="mb-3">
                         <label for="user" class="form-label">Edad</label>
-                        <input type="text" class="form-control" id="user" name="user" tabindex="1">
+                        <input type="text" class="form-control" id="edad" name="user" tabindex="1">
                     </div>
                     <div class="mb-3">
                         <label for="user" class="form-label">Direccion</label>
-                        <input type="text" class="form-control" id="user" name="user" tabindex="1">
+                        <input type="text" class="form-control" id="direccion" name="user" tabindex="1">
                     </div>
                     <div class="mb-3">
                         <label for="user" class="form-label">Comuna</label>
-                        <select id="rol" name="rol" class="form-select" tabindex="2">
-                            <option value="seleccione comuna">Seleccione comuna...</option>
+                        <select id="comuna" name="rol" class="form-select" tabindex="2">
+                            <option value="seleccione comuna">Seleccione Comuna...</option>
                             <option value="santiago">Santiago</option>
                             <option value="conchali">Conchalí</option>
                             <option value="huechuraba">Huechuraba</option>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="user" class="form-label">Banco</label>
-                        <select id="rol" name="rol" class="form-select" tabindex="2">
+                        <select id="banco" name="rol" class="form-select" tabindex="2">
                             <option value="banco de chile">Seleccione un Banco...</option>
                             <option value="banco de chile">Banco de Chile</option>
                             <option value="banco internacional">Banco Internacional</option>
@@ -125,11 +125,11 @@
                     </div>        
                     <div class="mb-3">
                         <label for="user" class="form-label">Tarjeta de Credito</label>
-                        <input type="text" class="form-control" id="user" name="user" tabindex="1">
+                        <input type="text" class="form-control" id="tarjeta" name="user" tabindex="1">
                     </div>
                     
                     <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
-                    <a href="/" class="btn btn-secondary">Cancelar</a>
+                    <a href="/views" class="btn btn-secondary">Cancelar</a>
                 </form>
             </div>
         </div>

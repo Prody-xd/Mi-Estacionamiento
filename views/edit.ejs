@@ -39,18 +39,93 @@
         <div class="card border-secondary">
             <div class="card-header">Editar Registro</div>
             <div class="card-body">
-                <form action="/save" method="POST">
-                    <input id="id" name="id" value="<% user.id %>" hidden> 
+                <form action="/update" method="POST">
+                    <input id="id_cliente" name="id" value="<% user.id_cliente %>" hidden> 
                     <div class="mb-3">
-                        <label for="user" class="form-label">Rol</label>
-                        <input type="text" class="form-control" id="user" name="user" value="<% user.user %>" tabindex="1">
+                        <label for="user" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombres" name="user" value="<% user.nombres %>" tabindex="1">
                     </div>
                     <div class="mb-3">
-                        <label for="user" class="form-label">Rol</label>
-                        <select id="rol" name="rol" class="form-select" tabindex="2">
-                            <option <%= user.rol=='admin' ? "selected" : '' %> value="admin" >Admin</option>
-                            <option <%= user.rol=='data entry' ? "selected" : '' %> value="data entry">Data Entry</option>
-                        </select>
+                      <label for="user" class="form-label">Apellidos</label>
+                      <input type="text" class="form-control" id="apellidos" name="user" value="<% user.apellidos %>" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Rut</label>
+                      <input type="text" class="form-control" id="rut_cliente" name="user" value="<% user.rut %>" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Edad</label>
+                      <input type="text" class="form-control" id="edad" name="user" value="<% user.edad %>" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Direccion</label>
+                      <input type="text" class="form-control" id="direccion" name="user" value="<% user.direccion %>" tabindex="1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Comuna</label>
+                      <select id="comuna" name="rol" class="form-select" tabindex="2">
+                        <option value="seleccione comuna">Seleccione Comuna...</option>
+                        <option value="santiago">Santiago</option>
+                        <option value="conchali">Conchalí</option>
+                        <option value="huechuraba">Huechuraba</option>
+                        <option value="independencia">Independencia</option>
+                        <option value="quilicura">Quilicura</option>
+                        <option value="recoleta">Recoleta</option>
+                        <option value="renca">Renca</option>
+                        <option value="las condes">Las Condes</option>
+                        <option value="lo barnechea">Lo Barnechea</option>
+                        <option value="providencia">Providencia</option>
+                        <option value="vitacura">Vitacura</option>
+                        <option value="la reina">La Reina</option>
+                        <option value="macul">Macul</option>
+                        <option value="ñuñoa">Ñuñoa</option>
+                        <option value="peñalolen">Peñalolén</option>
+                        <option value="la florida">La Florida</option>
+                        <option value="la granja">La Granja</option>
+                        <option value="el bosque">El Bosque</option>
+                        <option value="la cisterna">La Cisterna</option>
+                        <option value="la pintana">La pintana</option>
+                        <option value="san ramon">San Ramón</option>
+                        <option value="lo espejo">Lo Espejo</option>
+                        <option value="pedro aguirre cerda">Pedro Aguirre Cerda</option>
+                        <option value="san joaquin">San Joaquín</option>
+                        <option value="san miguel">San Miguel</option>
+                        <option value="cerrillos">Cerrillos</option>
+                        <option value="estacion central">Estacion Central</option>
+                        <option value="maipu">Mapipú</option>
+                        <option value="cerro navia">Cerro Navia</option>
+                        <option value="lo prado">Lo Prado</option>
+                        <option value="pudahuel">Pudahuel</option>
+                        <option value="quinta normal">Quinta Normal</option>
+                      </select>                     
+                    </div>
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Banco</label>
+                      <select id="banco_cliente" name="rol" class="form-select" tabindex="2">
+                        <option value="banco de chile">Seleccione un Banco...</option>
+                        <option value="banco de chile">Banco de Chile</option>
+                        <option value="banco internacional">Banco Internacional</option>
+                        <option value="scotiabank">Scotiabank</option>
+                        <option value="banco de creditos e inversiones">BCI</option>
+                        <option value="corpbanca">Corpbanca</option>
+                        <option value="banco bice">Banco Bice</option>
+                        <option value="hsbc bank">HSBC Bank</option>
+                        <option value="banco santander chile">Banco Santander Chile</option>
+                        <option value="banco itau chile">Banco Itaú Chile</option>
+                        <option value="banco security">Banco Security</option>
+                        <option value="banco fallabela">Banco Fallabela</option>
+                        <option value="deutsche bank">Deutsche Bank</option>
+                        <option value="banco ripley">Banco Ripley</option>
+                        <option value="rabobank chile">Rabobank Chile</option>
+                        <option value="banco consorcio">Banco Consorcio</option>
+                        <option value="banco penta">Banco Penta</option>
+                        <option value="banco paris">Banco Paris</option>
+                        <option value="banco bilbao vizcaya argentaria">Banco Bilbao Vizcaya Argentaria</option>
+                        <option value="banco btg pactual chile">Banco BTG Pactual Chile</option>
+                      </select>                    </div>
+                    <div class="mb-3">
+                      <label for="user" class="form-label">Tarjeta de Credito</label>
+                      <input type="text" class="form-control" id="tarjeta_de_credito" name="user" value="<% user.tarjeta_de_credito %>" tabindex="1">
                     </div>
                     <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                     <a href="/" class="btn btn-secondary">Cancelar</a>

@@ -21,14 +21,11 @@ router.get('/create', (req, res)=>{
     res.render('create');
 })
 
-const crud = require('./controllers/crud');
-router.post('/save', crud.save)
+//Ruta de editar registros
 
-//Ruta de editar  registros
-
-router.get('/edit/id', (req, res)=>{
-    const id = req.params.id;
-    conexion.query('SELECT * FROM users where id=?'[id], (error, results)=>{
+router.get('/edit/:id_cliente', (req, res)=>{
+    const id_cliente = req.params.id_cliente;
+    conexion.query('SELECT * FROM cliente WHERE id_cliente=?',[id_cliente], (error, results)=>{
         if(error){
             throw error;
         }else{
@@ -36,5 +33,9 @@ router.get('/edit/id', (req, res)=>{
         }
     })
 })
+
+const crud = require('./controllers/crud');
+router.post('/save', crud.save);
+router.post('/update', crud.update);
 
 module.exports = router;
