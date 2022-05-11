@@ -27,10 +27,6 @@
               <a class="nav-link" href="../mapa">Mapa</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
         </div>
       </div>
     </nav>
@@ -40,92 +36,93 @@
             <div class="card-header">Editar Registro</div>
             <div class="card-body">
                 <form action="/update" method="POST">
-                    <input id="id_cliente" name="id" value="<% user.id_cliente %>" hidden> 
+                    <input id="id_cliente" name="id_cliente" value="<% user.id_cliente %>" hidden> 
                     <div class="mb-3">
                         <label for="user" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombres" name="user" value="<% user.nombres %>" tabindex="1">
+                        <input type="text" class="form-control" id="nombres" name="nombres" value="<% user.nombres %>" tabindex="1">
                     </div>
                     <div class="mb-3">
                       <label for="user" class="form-label">Apellidos</label>
-                      <input type="text" class="form-control" id="apellidos" name="user" value="<% user.apellidos %>" tabindex="1">
+                      <input type="text" class="form-control" id="apellidos" name="apellidos" value="<% user.apellidos %>" tabindex="1">
                     </div>
                     <div class="mb-3">
                       <label for="user" class="form-label">Rut</label>
-                      <input type="text" class="form-control" id="rut_cliente" name="user" value="<% user.rut %>" tabindex="1">
+                      <input type="text" class="form-control" id="rut_cliente" name="rut_cliente" value="<% user.rut %>" tabindex="1">
                     </div>
                     <div class="mb-3">
                       <label for="user" class="form-label">Edad</label>
-                      <input type="text" class="form-control" id="edad" name="user" value="<% user.edad %>" tabindex="1">
+                      <input type="text" class="form-control" id="edad" name="edad" value="<% user.edad %>" tabindex="1">
                     </div>
                     <div class="mb-3">
                       <label for="user" class="form-label">Direccion</label>
-                      <input type="text" class="form-control" id="direccion" name="user" value="<% user.direccion %>" tabindex="1">
+                      <input type="text" class="form-control" id="direccion" name="direccion" value="<% user.direccion %>" tabindex="1">
                     </div>
                     <div class="mb-3">
                       <label for="user" class="form-label">Comuna</label>
-                      <select id="comuna" name="rol" class="form-select" tabindex="2">
+                      <select id="comuna" name="comuna" class="form-select" tabindex="2">
                         <option value="seleccione comuna">Seleccione Comuna...</option>
-                        <option value="santiago">Santiago</option>
-                        <option value="conchali">Conchalí</option>
-                        <option value="huechuraba">Huechuraba</option>
-                        <option value="independencia">Independencia</option>
-                        <option value="quilicura">Quilicura</option>
-                        <option value="recoleta">Recoleta</option>
-                        <option value="renca">Renca</option>
-                        <option value="las condes">Las Condes</option>
-                        <option value="lo barnechea">Lo Barnechea</option>
-                        <option value="providencia">Providencia</option>
-                        <option value="vitacura">Vitacura</option>
-                        <option value="la reina">La Reina</option>
-                        <option value="macul">Macul</option>
-                        <option value="ñuñoa">Ñuñoa</option>
-                        <option value="peñalolen">Peñalolén</option>
-                        <option value="la florida">La Florida</option>
-                        <option value="la granja">La Granja</option>
-                        <option value="el bosque">El Bosque</option>
-                        <option value="la cisterna">La Cisterna</option>
-                        <option value="la pintana">La pintana</option>
-                        <option value="san ramon">San Ramón</option>
-                        <option value="lo espejo">Lo Espejo</option>
-                        <option value="pedro aguirre cerda">Pedro Aguirre Cerda</option>
-                        <option value="san joaquin">San Joaquín</option>
-                        <option value="san miguel">San Miguel</option>
-                        <option value="cerrillos">Cerrillos</option>
-                        <option value="estacion central">Estacion Central</option>
-                        <option value="maipu">Mapipú</option>
-                        <option value="cerro navia">Cerro Navia</option>
-                        <option value="lo prado">Lo Prado</option>
-                        <option value="pudahuel">Pudahuel</option>
-                        <option value="quinta normal">Quinta Normal</option>
+                        <option value="Santiago">Santiago</option>
+                        <option value="Conchali">Conchalí</option>
+                        <option value="Huechuraba">Huechuraba</option>
+                        <option value="Independencia">Independencia</option>
+                        <option value="Quilicura">Quilicura</option>
+                        <option value="Recoleta">Recoleta</option>
+                        <option value="Renca">Renca</option>
+                        <option value="Las Condes">Las Condes</option>
+                        <option value="Lo Barnechea">Lo Barnechea</option>
+                        <option value="Providencia">Providencia</option>
+                        <option value="Vitacura">Vitacura</option>
+                        <option value="La Reina">La Reina</option>
+                        <option value="Macul">Macul</option>
+                        <option value="Ñuñoa">Ñuñoa</option>
+                        <option value="Peñalolen">Peñalolén</option>
+                        <option value="La Florida">La Florida</option>
+                        <option value="La Granja">La Granja</option>
+                        <option value="El Bosque">El Bosque</option>
+                        <option value="La Cisterna">La Cisterna</option>
+                        <option value="La Pintana">La pintana</option>
+                        <option value="San Ramon">San Ramón</option>
+                        <option value="Lo Espejo">Lo Espejo</option>
+                        <option value="Pedro Aguirre Cerda">Pedro Aguirre Cerda</option>
+                        <option value="San Joaquin">San Joaquín</option>
+                        <option value="San Miguel">San Miguel</option>
+                        <option value="Cerrillos">Cerrillos</option>
+                        <option value="Estacion Central">Estacion Central</option>
+                        <option value="Maipu">Mapipú</option>
+                        <option value="Cerro Navia">Cerro Navia</option>
+                        <option value="Lo Prado">Lo Prado</option>
+                        <option value="Pudahuel">Pudahuel</option>
+                        <option value="Quinta Normal">Quinta Normal</option>
                       </select>                     
                     </div>
                     <div class="mb-3">
                       <label for="user" class="form-label">Banco</label>
-                      <select id="banco_cliente" name="rol" class="form-select" tabindex="2">
-                        <option value="banco de chile">Seleccione un Banco...</option>
-                        <option value="banco de chile">Banco de Chile</option>
-                        <option value="banco internacional">Banco Internacional</option>
-                        <option value="scotiabank">Scotiabank</option>
-                        <option value="banco de creditos e inversiones">BCI</option>
-                        <option value="corpbanca">Corpbanca</option>
-                        <option value="banco bice">Banco Bice</option>
-                        <option value="hsbc bank">HSBC Bank</option>
-                        <option value="banco santander chile">Banco Santander Chile</option>
-                        <option value="banco itau chile">Banco Itaú Chile</option>
-                        <option value="banco security">Banco Security</option>
-                        <option value="banco fallabela">Banco Fallabela</option>
-                        <option value="deutsche bank">Deutsche Bank</option>
-                        <option value="banco ripley">Banco Ripley</option>
-                        <option value="rabobank chile">Rabobank Chile</option>
-                        <option value="banco consorcio">Banco Consorcio</option>
-                        <option value="banco penta">Banco Penta</option>
-                        <option value="banco paris">Banco Paris</option>
-                        <option value="banco bilbao vizcaya argentaria">Banco Bilbao Vizcaya Argentaria</option>
-                        <option value="banco btg pactual chile">Banco BTG Pactual Chile</option>
-                      </select>                    </div>
+                      <select id="banco_cliente" name="banco_cliente" class="form-select" tabindex="2">
+                        <option value="Banco de chile">Seleccione un Banco...</option>
+                        <option value="Banco de chile">Banco de Chile</option>
+                        <option value="Banco internacional">Banco Internacional</option>
+                        <option value="Scotiabank">Scotiabank</option>
+                        <option value="Banco de creditos e inversiones">BCI</option>
+                        <option value="Corpbanca">Corpbanca</option>
+                        <option value="Banco bice">Banco Bice</option>
+                        <option value="HSBC bank">HSBC Bank</option>
+                        <option value="Banco santander chile">Banco Santander Chile</option>
+                        <option value="Banco itau chile">Banco Itaú Chile</option>
+                        <option value="Banco security">Banco Security</option>
+                        <option value="Banco fallabela">Banco Fallabela</option>
+                        <option value="Deutsche bank">Deutsche Bank</option>
+                        <option value="Banco ripley">Banco Ripley</option>
+                        <option value="Rabobank chile">Rabobank Chile</option>
+                        <option value="Banco consorcio">Banco Consorcio</option>
+                        <option value="Banco penta">Banco Penta</option>
+                        <option value="Banco paris">Banco Paris</option>
+                        <option value="Banco bilbao vizcaya argentaria">Banco Bilbao Vizcaya Argentaria</option>
+                        <option value="Banco btg pactual chile">Banco BTG Pactual Chile</option>
+                      </select>                    
+                    </div>
                     <div class="mb-3">
                       <label for="user" class="form-label">Tarjeta de Credito</label>
-                      <input type="text" class="form-control" id="tarjeta_de_credito" name="user" value="<% user.tarjeta_de_credito %>" tabindex="1">
+                      <input type="text" class="form-control" id="tarjeta_de_credito" name="tarjeta_de_credito" value="<% user.tarjeta_de_credito %>" tabindex="1">
                     </div>
                     <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                     <a href="/" class="btn btn-secondary">Cancelar</a>

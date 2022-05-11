@@ -30,7 +30,7 @@ exports.update = (req, res)=>{
     const tarjeta_de_credito = req.body.tarjeta_de_credito;
 
 
-    conexion.query('UPDATE cliente SET ? WHERE id = ?',[{id_cliente,nombres:nombres, apellidos:apellidos, rut_cliente:rut_cliente, edad:edad, direccion:direccion, comuna:comuna, banco_cliente:banco_cliente, tarjeta_de_credito:tarjeta_de_credito}], (error, results)=>{
+    conexion.query('UPDATE cliente SET ? WHERE id_cliente = ?',[{nombres:nombres, apellidos:apellidos, rut_cliente:rut_cliente, edad:edad, direccion:direccion, comuna:comuna, banco_cliente:banco_cliente, tarjeta_de_credito:tarjeta_de_credito}, id_cliente], (error, results)=>{
         if(error){
             console.log(error);   
         }else{
