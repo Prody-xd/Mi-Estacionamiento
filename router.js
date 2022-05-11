@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const app = express();
 
 const conexion = require('./database/db');
 
@@ -37,5 +38,10 @@ router.get('/edit/:id_cliente', (req, res)=>{
 const crud = require('./controllers/crud');
 router.post('/save', crud.save);
 router.post('/update', crud.update);
+
+
+
+
+
 
 module.exports = router;
