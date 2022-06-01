@@ -7,6 +7,12 @@ const conexion = mysql.createConnection({
     database: 'estacionamiento'
 });
 
+const connection = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+});
 
 conexion.connect((error)=>{
     if(error){
@@ -15,6 +21,5 @@ conexion.connect((error)=>{
     }
     console.log('¡Conectado a la BD MySQL!');
 })
-
 
 module.exports = conexion;

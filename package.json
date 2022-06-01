@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/Prody-xd/Mi-Estacionamiento#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "boxicons": "^2.1.2",
-    "ejs": "^3.1.7",
-    "express": "^4.18.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.15"
   }
