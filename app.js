@@ -37,10 +37,6 @@ app.use(session({
 //7- invocamos modulo de conexion a la BD
 const conecction = require ('./database/db')
 
-//8- estableciendo las rutas
-app.get('/', (req, res)=>{
-    res.render('indexlogin');
-})
 
 console.log(__dirname);
 app.use('/', require('./router'));
