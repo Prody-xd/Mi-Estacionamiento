@@ -22,6 +22,9 @@
         const myLatLng2 = {lat: -33.51655898713955, lng: -70.60007749218344};
         const myLatLng3 = {lat: -33.51680944441122, lng: -70.601423961091};
         const myLatLng4 = {lat: -33.51496677816206, lng: -70.5990743459828};
+        const msjOcupado = 'Estacionamiento Ocupado'
+        const msjDispo = 'Estacionamiento Disponible'
+        const msjMiUbi = 'Esta es tu Ubicacion'
 
 //, 
         map = new google.maps.Map(document.getElementById("map"),{
@@ -31,23 +34,40 @@
         marker = new google.maps.Marker({
             position: myLatLng,
             map,
-            title: "Estacionamiento 1"
+            title: "Mi ubicacion",
+            animation: google.maps.Animation.BOUNCE
+        });
+        marker.addListener('click', (googleMapsEvent) => {
+          document.getElementById('infoMarker').innerHTML = msjMiUbi
         });
         marker2 = new google.maps.Marker({
             position: myLatLng2,
             map : map,
-            title: "Estacionamiento 2"
+            title: "Estacionamiento 2",
+            animation: google.maps.Animation.DROP
+        });
+        marker2.addListener('click', (googleMapsEvent) => {
+          document.getElementById('infoMarker').innerHTML = msjDispo
         });
         marker3 = new google.maps.Marker({
             position: myLatLng3,
             map : map,
-            title: "Estacionamiento 3"
+            title: "Estacionamiento 3",
+            animation: google.maps.Animation.DROP
+        });
+        marker3.addListener('click', (googleMapsEvent) => {
+          document.getElementById('infoMarker').innerHTML = msjOcupado
         });
         marker4 = new google.maps.Marker({
             position: myLatLng4,
             map : map,
-            title: "Estacionamiento 4"
+            title: "Estacionamiento 4",
+            animation: google.maps.Animation.DROP
         });
+        marker4.addListener('click', (googleMapsEvent) => {
+          document.getElementById('infoMarker').innerHTML = msjDispo
+        });
+
         getPosition();
     }
     function getPosition() {
@@ -74,12 +94,14 @@
         }else if( err.code == 2 ) {
             alert("Error: position no existe o no se encuentra");
         }
+    //
     }
 </script>
 <style type="text/css">
     #map {
       height: 50%;
       width: 50%;
+      margin: 0px auto;
 
     }
     html, body {
@@ -111,9 +133,22 @@
             </form>
           </div>
         </div>
-      </nav>
-  
-    <div id="map" ></div>
+      </nav><br><br>
+    
+    
+        
+      <center><h3 class="display-6">Bienvenida/o a la sección de geolocalización aquí podrás ver tu ubicación y para saber el estado de algún estacionamiento solo debes darle click</h3></center>
+       <br><br> 
+      <div class="border border-success" id="map" ></div>
+      <div class="container" style="height: 51.2%; width: 51.2%;">
+        <div class="d-block p-2 bg-success text-white" style="margin: auto;">
+          <center><h3 class="lead" id="infoMarker">Esperando Seleccion..</h3></center>
+        </div>
+      </div>  
+    
+      
+      <!-- <link rel="stylesheet" href="./styles/map.css"> -->
+    
 
 </body>
 </html>
