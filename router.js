@@ -21,6 +21,10 @@ router.get('/', (req, res)=>{
 router.get('/create', (req, res)=>{
     res.render('create');
 })
+// ruta para home
+router.get('/home', (req, res)=>{
+    res.render('indexhome');
+})
 
 //Ruta de editar registros
 

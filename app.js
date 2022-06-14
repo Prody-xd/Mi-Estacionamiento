@@ -38,7 +38,7 @@ app.use(session({
 const conecction = require ('./database/db')
 
 
-console.log(__dirname);
+// console.log(__dirname);
 app.use('/', require('./router'));
 
 app.listen(5000,  ()=>{
