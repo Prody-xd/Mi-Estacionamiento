@@ -84,4 +84,47 @@ router.post('/register', async (req, res)=>{
 
 })
 
+router.post('/auth', async (req, res)=>{
+    const user = req.body.user;
+    const pass = req.body.pass;
+    let passwordHaash = await bcryptjs.hash(pass, 8);
+    if(user && pass){
+        conexion.query('SELECT * FROM users WHERE user = ?', [user], async (error, results)=>{
+            if(results.length == 0 || !(await bcryptjs.compare(pass, results[0].pass))){
+                res.send('login',{
+                    alet:true,
+                    aletTitle: "Error",
+                    alertMessage: "Usuario y/o password incorrectas",
+                    alertIcon: "error",
+                    showConfirmButton: true,
+                    timer:false,
+                    ruta:'login'
+                });
+            }else{
+                req.session.name = results[0].name
+                res.send('login',{
+                    alet:true,
+                    aletTitle: "Conexion Exitosa",
+                    alertMessage: "¡Login Correcto!",
+                    alertIcon: "success",
+                    showConfirmButton: false,
+                    timer:1500,
+                    ruta:''
+                });
+            }
+        })
+    }else{
+        res.send('login',{
+            alet:true,
+            aletTitle: "Advertencia",
+            alertMessage: "¡Por Favor ingrese un usuario y/o contraseña!",
+            alertIcon: "warning",
+            showConfirmButton: true,
+            timer:1500,
+            ruta:'login'
+        });
+    }
+})
+
+
 module.exports = router;
