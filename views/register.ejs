@@ -10,26 +10,26 @@
 </head>
 <body>
     <div class="register-form">
-        <h1>Form Registration</h1>
+        <h1>Registro</h1>
         <form action="/register" method="POST">
-            <label for="user">User name</label>
+            <label for="user">Usuario</label>
             <input type="text" name="user" required>
 
-            <label for="name">Full name</label>
+            <label for="name">Nombre Entero</label>
             <input type="text" name="name" required>
 
             <label for="rol">Rol</label>
             <select name="rol" id="rol" class="select-css">
                 <option value="">Seleccione un Rol...</option>
-                <option value="admin">Admin</option>
-                <option value="data entry">Data Entry</option>
+                <option value="arrendatario">Arrendatario</option>
+                <option value="propietario">Propietario</option>
             </select> 
 
-            <label for="pass">Password</label>
+            <label for="pass">Contraseña</label>
             <input type="password" name="pass" required>
 
             <div style="display: inline;">
-                <a href="/" class="btn-cancel">Cancel</a><input type="submit" class="btn-save" value="Save">
+                <a href="/" class="btn-cancel">Cancelar</a><input type="submit" class="btn-save" value="Guardar">
             </div>
         </form>
             
