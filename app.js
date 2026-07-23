@@ -27,13 +27,15 @@ app.use(session({
     saveUninitialized: true
 }));
 
-//7- invocamos modulo de conexion a la BD
-const conexion = require('./database/db');
-
-//8- ruta para el mapa
-app.get('/mapa', function (req, res) {
-    res.render('mapa');
+//7- exponemos el estado de sesion a todas las vistas (para el navbar)
+app.use((req, res, next) => {
+    res.locals.loggedin = req.session.loggedin || false;
+    res.locals.name = req.session.name || null;
+    next();
 });
+
+//8- invocamos modulo de conexion a la BD
+const conexion = require('./database/db');
 
 //9- rutas principales
 app.use('/', require('./router'));

@@ -4,8 +4,21 @@ const app = express();
 
 const conexion = require('./database/db');
 
-//MOSTRAR todos los Registros
-router.get('/', (req, res)=>{
+// Middleware: exige sesion iniciada para acceder a rutas protegidas
+function requireLogin(req, res, next){
+    if(req.session && req.session.loggedin){
+        return next();
+    }
+    return res.redirect('/login');
+}
+
+// ruta para home (PUBLICA)
+router.get('/home', (req, res)=>{
+    res.render('indexhome');
+})
+
+//MOSTRAR todos los Registros (PROTEGIDA)
+router.get('/', requireLogin, (req, res)=>{
     
      conexion.query('SELECT * FROM cliente', (error, results)=>{
         if(error){
@@ -17,18 +30,19 @@ router.get('/', (req, res)=>{
 })
 
 
-//Ruta para crear registros
-router.get('/create', (req, res)=>{
+//Ruta para crear registros (PROTEGIDA)
+router.get('/create', requireLogin, (req, res)=>{
     res.render('create');
 })
-// ruta para home
-router.get('/home', (req, res)=>{
-    res.render('indexhome');
+
+// ruta para el mapa (PROTEGIDA)
+router.get('/mapa', requireLogin, (req, res)=>{
+    res.render('mapa');
 })
 
-//Ruta de editar registros
+//Ruta de editar registros (PROTEGIDA)
 
-router.get('/edit/:id_cliente', (req, res)=>{
+router.get('/edit/:id_cliente', requireLogin, (req, res)=>{
     const id_cliente = req.params.id_cliente;
     conexion.query('SELECT * FROM cliente WHERE id_cliente=?',[id_cliente], (error, results)=>{
         if(error){
@@ -41,9 +55,8 @@ router.get('/edit/:id_cliente', (req, res)=>{
 
 const crud = require('./controllers/crud');
 const bcryptjs = require('bcryptjs');
-const Connection = require('mysql/lib/Connection');
-router.post('/save', crud.save);
-router.post('/update', crud.update);
+router.post('/save', requireLogin, crud.save);
+router.post('/update', requireLogin, crud.update);
 
 
 //8- estableciendo las rutas
@@ -136,6 +149,13 @@ router.post('/auth', async (req, res)=>{
             ruta:'login'
         });
     }
+})
+
+// Cerrar sesion
+router.get('/logout', (req, res)=>{
+    req.session.destroy(()=>{
+        res.redirect('/home');
+    });
 })
 
 
