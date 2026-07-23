@@ -1,3 +1,2 @@
-body{
-    background-image: url(../img/fondo4.jpg);
-}
+/* El tema principal ahora vive en style.css (tema oscuro unificado).
+   Este archivo se mantiene por compatibilidad con las vistas que lo enlazan. */
